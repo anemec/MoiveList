@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MoiveList</string>
+    <string name="search">Enter movie to search for</string>
+    <string name="clear_search">Clear Search</string>
+</resources>
