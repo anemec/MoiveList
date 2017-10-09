@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.io.Serializable;
+
 public class MovieGalleryActivity extends SingleFragmentActivity implements MovieGalleryFragment.Callbacks {
 
 
@@ -15,7 +17,11 @@ public class MovieGalleryActivity extends SingleFragmentActivity implements Movi
 
     @Override
     public void onMovieSelected(Movie movie) {
+        Intent intent = MovieActivity.newIntent(this, movie);
+        startActivity(intent);
+        /*
         Intent intent = MovieActivity.newIntent(this, movie.getUUID());
         startActivity(intent);
+        */
     }
 }

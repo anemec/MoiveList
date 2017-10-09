@@ -1,12 +1,16 @@
 package com.andnand.android.moivelist;
 
+import android.util.Log;
+
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * Created by andrew on 9/28/17.
  */
 
-public class Movie {
+//TODO decide between Serializable vs Parcelable
+public class Movie implements Serializable {
 
     private UUID mUUID;
     private String mTitle;
@@ -17,7 +21,7 @@ public class Movie {
     private String mDirector;
     private String mWriter;
     private String mActors;
-    private String mLanguage;
+    private String mLanguage = "N/A";
     private String mPoster;
     private String mRatings;
     private String mImdbId;
@@ -150,5 +154,13 @@ public class Movie {
 
     public void setWebsite(String website) {
         mWebsite = website;
+    }
+
+    @Override
+    public String toString() {
+        if (mTitle != null)
+            return "Movie title " + mTitle;
+        else
+            return "Movie title is null";
     }
 }
